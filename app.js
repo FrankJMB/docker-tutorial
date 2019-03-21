@@ -3,7 +3,7 @@ var retry = require('retry')
 
 console.log("Hello World!")
 
-var operation = retry.operation({retries:3})
+var operation = retry.operation({retries:5})
 
 operation.attempt(function() {
   var client = new pg.Client()
@@ -15,4 +15,5 @@ operation.attempt(function() {
     if(!e) console.log("Hello Postgres!")
   })
 })
+
 

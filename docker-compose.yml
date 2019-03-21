@@ -1,0 +1,10 @@
+db:
+  image: postgres
+mydockernodeapp:
+  build: .
+  links:
+    - db
+  environment:
+    - PGHOST=db1
+    - PGDATABASE=postgres
+    - PGUSER=postgres
